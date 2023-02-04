@@ -45,14 +45,18 @@ main = do
 
 apartineInSetulJulia :: Double -> Double -> Double -> Double -> Int
 apartineInSetulJulia !cx !cy !x !y = calculeaza x y 0
-    where calculeaza x y n | n > 50 = 190
-          calculeaza x y n | x*x + y*y > 4 = if n + 40 > 255 then 255 else n + 40
+    where calculeaza x y n | n > 50 = n
+          calculeaza x y n | x*x + y*y > 4 = n
           calculeaza !x !y !n = calculeaza (x*x - y*y + cx) (2*x*y + cy) (n + 1)
 
 calculeazaValoarePixel :: Int -> PixelRGB8
 calculeazaValoarePixel n = 
-    let word = fromIntegral n
+    let word = fromIntegral $ 255 - if n > 50 then 190 else (if n + 40 > 255 then 255 else n + 40) 
     in PixelRGB8 word word word
 
 calculeazaImagine :: Double -> Double -> Picture 
-calculeazaImagine cx cy = fromImageRGB8 $! generateImage (\x y -> calculeazaValoarePixel $! 255 - apartineInSetulJulia cx cy ((fromIntegral (256-x))/256.0) ((fromIntegral (256-y))/256.0)) 512 512
+calculeazaImagine cx cy = 
+    fromImageRGB8 $! generateImage 
+        (\x y -> calculeazaValoarePixel $! 
+            apartineInSetulJulia cx cy ((fromIntegral (256-x))/256.0) ((fromIntegral (256-y))/256.0)) 
+        512 512
