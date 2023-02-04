@@ -21,8 +21,10 @@ Exmemple de fractali:
 3. **curba Heighway**
 4. **Multimea lui Cantor**
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Sierpinski_triangle.svg/1200px-Sierpinski_triangle.svg.png"  width="30%">
-<img src="https://1.bp.blogspot.com/-qJf-vcR1lZM/UQadoc4jnII/AAAAAAAAFUs/-m8q8Kqqlq4/s1600/curba+fulgul+de+zapada.jpg"  width="30%">
+<p float="left" align="middle">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Sierpinski_triangle.svg/1200px-Sierpinski_triangle.svg.png"  width="30%">
+	<img src="https://1.bp.blogspot.com/-qJf-vcR1lZM/UQadoc4jnII/AAAAAAAAFUs/-m8q8Kqqlq4/s1600/curba+fulgul+de+zapada.jpg"  width="30%">
+</p>
 
 
 Pentru a rula aplicatia avem nevoie ca Haskell si stack sa fie instalate pe calculator. Putem face acest lucru urmand pasii de [aici](https://docs.haskellstack.org/en/stable/).
